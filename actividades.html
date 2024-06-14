@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Box Actividades</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.15.1/cdn/themes/light.css" />
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.15.1/cdn/shoelace-autoloader.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Memoria Anual 2024</h1>
+    </header>
+    
+    <main class="container">
+        <div class="box" id="editBox">
+            <div class="box-content">
+                <span id="editTitle">Actividades 2024</span>
+                <div class="text-area-container">
+                    <sl-textarea id="editTextArea" resize="auto" filled></sl-textarea> 
+                </div>
+            </div>
+            <button id="cancelEdit" onclick="location.href='index.html'">Cancelar</button>
+            <button id="saveEdit" onclick="location.href='index.html'">Guardar</button>
+        </div>
+    </main>
+
+</body>
+</html>

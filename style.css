@@ -9,6 +9,11 @@ header {
     margin-bottom: 20px;
 }
 
+.logo img {
+    height: 50px;
+    margin-right: 20px;
+}
+
 header h1 {
     margin: 0;
     font-size: 24px;
@@ -21,6 +26,7 @@ header h2 {
 }
 
 .container {
+    text-align: center;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -54,14 +60,14 @@ button {
     padding: 5px 10px;
     font-size: 16px;
     cursor: pointer;
-    background-color: #007bff;
+    background-color: #00C4B3;
     color: #fff;
     border: none;
     border-radius: 5px;
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #85e9ff;
 }
 
 .text-area-container {

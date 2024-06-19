@@ -3,42 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Memoria Anual</title>
+    <title>Memoria Anual 2024 - Usuario</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.15.1/cdn/themes/light.css" />
     <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.15.1/cdn/shoelace-autoloader.js"></script>
-    <script src="script.js"></script>
-    
+    <script src="script.js" defer></script>
 </head>
 <body>
     <header>
         <div class="logo">
-            <img src="logo.png" alt="Logo">
+            <img src="logo.png" alt="Logo" onclick="location.href='../home/index.html'">
         </div>
-        <h1>Memoria Anual 2024</h1>
-        <h2>Dirección de Sistemas</h2>
     </header>
-    
-    <main class="container">
+    <main>
+        <h1>Memoria Anual 2024</h1>
+        <h3>Dirección de Sistemas</h3>
         <div class="box" id="objetivosBox">
             <div class="box-content">
-                <span>Objetivos 2024</span>
+                <strong>Objetivos 2024</strong>
+                <button class="view-button" onclick="showTextarea('objetivosBox')">Agregar</button>
             </div>
-            <button class="view-button" onclick="location.href='objetivos.html'">Agregar</button>
+            <div class="text-area-container">
+                <!-- El textarea de Shoelace se añade dinámicamente con JavaScript -->
+            </div>
         </div>
         <div class="box" id="actividadesBox">
             <div class="box-content">
-                <span>Actividades 2024</span>
+                <strong>Actividades 2024</strong>
+                <button class="view-button" onclick="showTextarea('actividadesBox')">Agregar</button>
             </div>
-            <button class="view-button" onclick="location.href='actividades.html'">Agregar</button>
+            <div class="text-area-container">
+                <!-- El textarea de Shoelace se añade dinámicamente con JavaScript -->
+            </div>
         </div>
         <div class="box" id="proyectosBox">
             <div class="box-content">
-                <span>Proyectos 2025</span>
+                <strong>Proyectos 2025</strong>
+                <button class="view-button" onclick="showTextarea('proyectosBox')">Agregar</button>
             </div>
-            <button class="view-button" onclick="location.href='proyectos.html'">Agregar</button>
+            <div class="text-area-container">
+                <!-- El textarea de Shoelace se añade dinámicamente con JavaScript -->
+            </div>
         </div>
+        <button class="confirm-button">Enviar a Secretará Académica</button>
     </main>
 </body>
 </html>
+
 

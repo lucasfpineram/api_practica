@@ -1,35 +1,29 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 20px;
+    padding: 0;
 }
 
 header {
+    background-color: #ffffff;
+    padding: 5px 0;
     text-align: left;
-    margin-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Sombra alrededor */
 }
 
 .logo img {
     height: 50px;
-    margin-right: 20px;
+    text-align: left;
 }
 
-header h1 {
-    margin: 0;
-    font-size: 24px;
+main {
+    padding: 20px;
 }
 
-header h2 {
-    margin: 5px 0 0 0;
-    font-size: 18px;
-    color: #666;
-}
-
-.container {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+h1, h3 {
+    margin-top: 0;
+    text-align: left;
 }
 
 .box {
@@ -37,49 +31,65 @@ header h2 {
     padding: 10px;
     border: 1px solid #b6b6b6;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
     font-size: 18px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
     background-color: #fff;
     border-radius: 5px;
     position: relative;
+    margin-bottom: 20px; /* Añadido */
 }
 
 .box-content {
     display: flex;
     align-items: center;
-    flex: 1;
+    justify-content: space-between; /* Espacio entre el contenido y el botón */
+    width: 100%;
 }
 
-.box-content span {
-    margin-right: 10px;
+.box-content strong {
+    margin-right: 20px;
+    margin-left: 5px;
 }
 
-button {
-    padding: 5px 10px;
-    font-size: 16px;
-    cursor: pointer;
+.view-button {
     background-color: #00C4B3;
     color: #fff;
-    border: none;
     border-radius: 5px;
+    padding: 5px 10px; /* Ajustar el tamaño del botón */
+    font-size: 14px; /* Tamaño de fuente más pequeño */
+    cursor: pointer;
+    border: none;
+    margin-left: auto; /* Empuja el botón a la derecha */
+    display: flex;
+    align-items: center; /* Asegura la alineación vertical */
+    height: 100%; /* Para asegurarse de que ocupe toda la altura de la caja */
 }
 
-button:hover {
-    background-color: #85e9ff;
+.view-button:hover {
+    background-color: #04867b;
 }
 
 .text-area-container {
-    /*display: none;*/
+    display: none; /* Oculto por defecto */
     width: 100%;
-    margin-left: auto;
+    margin-top: 10px;
 }
 
-.text-area-container textarea {
-    width: 100%;
-    height: 80px;
-    border: 1px solid #000;
+.confirm-button {
+    background-color: #00C4B3;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
     border-radius: 5px;
-    padding: 5px;
+    font-size: 18px;
+    display: block;
+    margin: 0 auto 10px; /* Centrar horizontalmente con margen inferior */
 }
+
+.confirm-button:hover {
+    background-color: #04867b;
+}
+
+

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memoria Anual 2024 - Administración</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.15.1/cdn/themes/light.css" />
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.15.1/cdn/shoelace-autoloader.js"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Logo">
+        </div>
+    </header>
+    <main>
+        <h1>Memoria Anual 2024</h1>
+        <h3>Panel de administración</h3>
+        <button class="new-area-button">Nueva área</button>
+        <table>
+            <thead>
+                <tr>
+                    <th>Área</th>
+                    <th>Usuario</th>
+                    <th>Completo</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Dirección de Sistemas</td>
+                    <td>robyheymann@utdt.edu</td>
+                    <td>No</td>
+                    <td>
+                        <button class="view-button" onclick="location.href='detalle.html'">Ver carga</button>
+                        <button class="edit-button" onclick="openEditPopup()">Editar</button>
+                        <button class="delete-button" onclick="openDeletePopup()">Borrar</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Dirección de Comunicaciones</td>
+                    <td>robyheymann@utdt.edu</td>
+                    <td>Si</td>
+                    <td>
+                        <button class="view-button" onclick="location.href='detalle.html'">Ver carga</button>
+                        <button class="edit-button" onclick="openEditPopup()">Editar</button>
+                        <button class="delete-button" onclick="openDeletePopup()">Borrar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+
+    <!-- Pop-up para editar -->
+    <sl-popup id="editPopup" class="popup" placement="top" distance="-100">
+        <span slot="anchor"></span>
+        <div class="popup-content">
+            <h3>Editar Área</h3>
+            <form>
+                <label for="area-name">Nombre del Área</label>
+                <input type="text" id="area-name" name="area-name" required>
+                <label for="user-email">Correo del Usuario</label>
+                <input type="email" id="user-email" name="user-email" required>
+                <label>
+                    <input type="checkbox" id="enable-switch" name="enable"> Habilitar
+                </label>
+                <label>
+                    <input type="checkbox" id="admin-switch" name="admin"> Administrador
+                </label>
+                <div class="form-buttons">
+                    <button type="cancel" class="cancel-button" onclick="closeEditPopup()">Cancelar</button>
+                    <button type="accept" class="acept-button">Aceptar</button>
+                </div>
+            </form>
+        </div>
+    </sl-popup>
+
+    <!-- Pop-up para borrar -->
+    <sl-popup id="deletePopup" class="popup" placement="top" distance="-50">
+        <span slot="anchor"></span>
+        <div class="popup-content">
+            <h3>Editar Área</h3>
+            <h4>¿Está seguro que desea borrar el área Dirección de Sistemas?</h4>
+            <div class="form-buttons">
+                <button type="cancel" onclick="closeDeletePopup()">Cancelar</button>
+                <button type="delete" onclick="confirmDelete()">Borrar</button>
+            </div>
+        </div>
+    </sl-popup>
+
+</body>
+</html>

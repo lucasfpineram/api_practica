@@ -28,14 +28,14 @@ services:
     postgres:
         image: postgres
         volumes:
-          - postgres_api_utdt:/var/lib/postgresql/data
+          - postgres_api_practica:/var/lib/postgresql/data
         ports:
           - 5432:5432
         environment:
-          - POSTGRES_PASSWORD=S3cret
-          - POSTGRES_USER=catedra
+          - POSTGRES_PASSWORD=password
+          - POSTGRES_USER=api-gestion
 volumes:
-    postgres_api_utdt:
+    postgres_api_practica:
         external: false
     logs:
         external: false

@@ -1,7 +1,9 @@
-INSERT INTO memna_areas (id_memna_areas, email, activo, baja, options) VALUES
-(1, 'santiago@example.com', TRUE, FALSE, JSON_OBJECT('setting1', 'value1')),
-(2, 'nicolas@example.com', TRUE, FALSE, JSON_OBJECT('setting2', 'value2')),
-(3, 'roby@example.com', FALSE, TRUE, JSON_OBJECT('setting3', 'value3'));
+INSERT INTO memna_areas (id_memna_areas, nombre, email, activo, baja) VALUES
+(1, 'Biblioteca', 'santiago@example.com', TRUE, FALSE),
+(2, 'Administracion', 'nicolas@example.com', TRUE, FALSE),
+(3, 'Comunicaciones', 'roby@example.com', FALSE, TRUE);
+
+select * from memna_areas;
 
 INSERT INTO memna_contenidos (fk_id_memna_areas, año, titulo, contenido) VALUES
 (1, 2023, 'objetivos', 'Contenido relacionado con los objetivos del área 1'),

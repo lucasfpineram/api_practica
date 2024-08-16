@@ -1,0 +1,32 @@
+version: "3.4"
+services:
+  service:
+    dns:
+     - 192.168.16.254
+     - 172.16.0.20
+     - 172.17.1.5
+     - 127.0.0.11
+    image: registry.gitlab.com/${PROJ_PATH}/${IMG_NAME}
+    hostname: service/${HOST_NAME}
+    environment:
+      host_name: ${HOST_NAME}
+      environment: ${ENVIRONMENT}
+      mysql_host: ${MYSQL_HOST}
+      mysql_user: ${MYSQL_USER}
+      mysql_db: ${MYSQL_DB}
+      mysql_pass: ${MYSQL_PASS}
+    deploy:
+      update_config:
+        parallelism: 1
+        delay: 5s
+        order: start-first
+      replicas: 1
+    working_dir: /app
+    command: npm run dev
+    networks:
+      - traefik_gw
+    volumes:
+      - /NFS-Data-Contenedores/${PROJ_NAME}-${APP_ENV}:/mount
+networks:
+  traefik_gw:
+    external: true

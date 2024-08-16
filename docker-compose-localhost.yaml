@@ -1,0 +1,41 @@
+version: '3.7'
+
+
+services:
+    worker-test-hono-docker:
+        working_dir: /app
+        command: npm run dev
+        build:
+            context: .
+            dockerfile: localhost.Dockerfile
+        container_name: ${APP_NAME}
+        environment:
+            host_name: ${HOST_NAME}
+            environment: ${ENVIRONMENT}
+            mysql_host: ${MYSQL_HOST}
+            mysql_user: ${MYSQL_USER}
+            mysql_db: ${MYSQL_DB}
+            mysql_pass: ${MYSQL_PASS}
+        ports:
+            - 9000:3000
+        volumes:
+            - ./:/app # hotreload del volumen
+        deploy:
+          resources:
+            limits:
+              cpus: '1'
+              memory: 1G
+    postgres:
+        image: postgres
+        volumes:
+          - postgres_api_utdt:/var/lib/postgresql/data
+        ports:
+          - 5432:5432
+        environment:
+          - POSTGRES_PASSWORD=S3cret
+          - POSTGRES_USER=catedra
+volumes:
+    postgres_api_utdt:
+        external: false
+    logs:
+        external: false

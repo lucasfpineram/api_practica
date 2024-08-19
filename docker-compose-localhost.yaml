@@ -27,12 +27,13 @@ services:
               memory: 1G
     postgres:
         image: postgres
+        container_name: db-api-practica # host
         volumes:
           - postgres_api_practica:/var/lib/postgresql/data
         ports:
           - 5432:5432
         environment:
-          - POSTGRES_PASSWORD=password
+          - POSTGRES_PASSWORD=Password
           - POSTGRES_USER=api-gestion
 volumes:
     postgres_api_practica:

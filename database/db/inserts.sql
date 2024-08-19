@@ -3,8 +3,6 @@ INSERT INTO memna_areas (id_memna_areas, nombre, email, activo, baja) VALUES
 (2, 'Administracion', 'nicolas@example.com', TRUE, FALSE),
 (3, 'Comunicaciones', 'roby@example.com', FALSE, TRUE);
 
-select * from memna_areas;
-
 INSERT INTO memna_contenidos (fk_id_memna_areas, año, titulo, contenido) VALUES
 (1, 2023, 'objetivos', 'Contenido relacionado con los objetivos del área 1'),
 (1, 2024, 'actividades', 'Contenido relacionado con las actividades del área 1'),

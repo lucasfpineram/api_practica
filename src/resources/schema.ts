@@ -1,5 +1,5 @@
-import { serial, varchar, boolean, integer, timestamp, text, pgTable} from 'drizzle-orm/pg-core';
-import { json } from 'stream/consumers';
+import { serial, varchar, boolean, integer, timestamp, text, pgTable, json} from 'drizzle-orm/pg-core';
+
 
 
 export const memnaAreas = pgTable('memna_areas', {
@@ -8,6 +8,7 @@ export const memnaAreas = pgTable('memna_areas', {
     email: varchar('email', { length: 50 }).notNull().unique(),
     activo: boolean('activo').notNull(),
     baja: boolean('baja').notNull(),
+    titulos: json('titulos'),
     lastUpdate: timestamp('last_update').notNull().defaultNow(),
     createdAt: timestamp('created_at').notNull().defaultNow(),
 });

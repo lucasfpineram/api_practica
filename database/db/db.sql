@@ -4,7 +4,6 @@ CREATE TABLE IF NOT EXISTS memna_areas (
     email VARCHAR(50) NOT NULL UNIQUE,
     activo BOOLEAN NOT NULL,
     baja BOOLEAN NOT NULL,
-    titulos JSON,
     last_update TIMESTAMP,
     created_at TIMESTAMP 
 );
@@ -12,7 +11,7 @@ CREATE TABLE IF NOT EXISTS memna_areas (
 CREATE TABLE IF NOT EXISTS memna_contenidos (
     id_memna_contenidos SERIAL PRIMARY KEY,
     fk_id_memna_areas INT,
-    periodo INT NOT NULL,
+    año INT NOT NULL,
     titulo TEXT NOT NULL,
     contenido TEXT,
     last_update TIMESTAMP,

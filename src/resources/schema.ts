@@ -1,11 +1,11 @@
 import { integer, serial, text, pgTable, boolean, timestamp, json } from 'drizzle-orm/pg-core';
 
 // EJEMPLO BASE
-// export const users: any = pgTable('minutas_usuarios', {
-//     id_usuario: serial('id_minutas_usuarios').primaryKey(),
-//     nombre: text('nombre').notNull(),
-//     email: text('email').notNull(),
-// });
+export const users: any = pgTable('minutas_usuarios', {
+    id_usuario: serial('id_minutas_usuarios').primaryKey(),
+    nombre: text('nombre').notNull(),
+    email: text('email').notNull(),
+});
 
 // Tabla: memna_areas
 export const memnaAreas = pgTable('memna_areas', {

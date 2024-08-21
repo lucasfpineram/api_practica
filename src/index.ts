@@ -2,12 +2,15 @@ import { serve } from '@hono/node-server'
 import { Hono } from 'hono'
 import { CustomError } from './error/custom.error';
 import { User } from './middleware/models/user.model';
-import { getTableDataFromMySQL } from './handler/getTableDataFromMySQL';
+import { memnaAreas } from './resources/schema';
 import { CustomResponse } from './handler/models/response.model';
 import { drizzle } from 'drizzle-orm/postgres-js';
 import { migrate } from 'drizzle-orm/postgres-js/migrator';
 import postgres from 'postgres';
 import { integer, serial, text, pgTable } from 'drizzle-orm/pg-core';
+import dotenv from 'dotenv';
+
+dotenv.config(); // Carga las variables de entorno
 
 // Variables generales en este proyectos
 type Variables = {
@@ -18,30 +21,16 @@ type Variables = {
 const app = new Hono<{ Variables: Variables }>()
 
 app.get('/', async (context) => {
-    // const customResponse: CustomResponse = new CustomResponse(200, { "worker": "api-memoria-gestion", "status": "OK", "environment": process.env.environment }, true, null, null);
-    // return customResponse.formatResponse()
-    return context.json({ "user": 1 })
-});
-
-app.get('/test', async (context) => {
-    
     try {
-    // for query purposes
-    const queryClient = postgres("postgres://catedra:S3cret@0.0.0.0:5432/catedra");
-    const db = drizzle(queryClient);
-    // console.log(queryClient);
-    const tabla: any = pgTable('lucasnicosanti', {
-        id: serial('id'),
-        nombre: text('nombre').notNull(),
-    });
-    const respuesta = await db.select().from(tabla);
-    console.log(respuesta);
+        const queryClient = postgres("postgres://user:pass@postgres:5432/db_api"); //     const queryClient = postgres("postgres://user:pass@db-api-practica
+        const db = drizzle(queryClient);
+        const respuesta = await db.select().from(memnaAreas);
+        console.log(respuesta);
     } catch (error) {
-        // console.log(error)
+        console.log(error);
     }
-    return context.json({ "prueba": 5000 })
-    // await db.select().from(...)...
-})
+    return context.json({ "prueba": 5000 });
+});
 
 // Middleware manejo de errores
 app.onError(async (error, context) => {

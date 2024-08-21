@@ -14,7 +14,8 @@ INSERT INTO memna_contenidos (fk_id_memna_areas, año, titulo, contenido) VALUES
 (1, 2024, 'asistencia a cursos y exposiciones', 'Contenido relacionado con la asistencia a cursos y exposiciones del área 1');
 
 INSERT INTO mail_juguete (mail_institucion, mail_personal, nombre, apellido) VALUES
-('santiago@example.com', 'personal1@example.com', 'Santiago', 'Romero'),
-('lucas@example.com', 'personal2@example.com', 'Lucas', 'Piñera'),
-('nicolas@example.com', 'personal3@example.com', 'Nico', 'Portelli');
-('roby@example.com', 'personal3@example.com', 'Roby', 'Heymann');
+('santiago@example.com', 'santiagopersonal@example.com', 'Santiago', 'Romero'),
+('lucas@example.com', 'lucaspersonal@example.com', 'Lucas', 'Piñera'),
+('nicolas@example.com', 'nicopersonal@example.com', 'Nico', 'Portelli'),
+('roby@example.com', 'robypersonal@example.com', 'Roby', 'Heymann');
+

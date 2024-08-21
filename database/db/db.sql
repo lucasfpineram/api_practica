@@ -30,3 +30,5 @@ CREATE TABLE IF NOT EXISTS mail_juguete (
 );
 
 select * from memna_areas;
+select * from memna_contenidos;
+select * from mail_juguete;

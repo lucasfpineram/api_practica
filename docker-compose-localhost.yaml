@@ -16,7 +16,7 @@ services:
             mysql_user: ${MYSQL_USER}
             mysql_db: ${MYSQL_DB}
             mysql_pass: ${MYSQL_PASS}
-        ports:
+        ports: 
             - 9000:3000
         volumes:
             - ./:/app # hotreload del volumen
@@ -26,15 +26,16 @@ services:
               cpus: '1'
               memory: 1G
     postgres:
-        image: postgres
-        container_name: db-api-practica # host
-        volumes:
+        image: postgres:latest
+        container_name: ${DB_NAME} # host
+        volumes: 
           - postgres_api_practica:/var/lib/postgresql/data
-        ports:
+        ports: 
           - 5432:5432
         environment:
-          - POSTGRES_PASSWORD=Password
-          - POSTGRES_USER=api-gestion
+          POSTGRES_USER: user
+          POSTGRES_PASSWORD: pass
+          POSTGRES_DB: db_api
 volumes:
     postgres_api_practica:
         external: false
